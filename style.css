@@ -1,0 +1,698 @@
+/* ============================================
+   ESTILOS EMIS - Payment Gateway
+   Design Moderno e Elegante
+   ============================================ */
+
+/* ===== RESET E BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== UTILITÁRIOS BOOTSTRAP CUSTOMIZADOS ===== */
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col, [class*="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.col-3 { flex: 0 0 25%; max-width: 25%; }
+.col-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+.col-5 { flex: 0 0 41.666%; max-width: 41.666%; }
+.col-6 { flex: 0 0 50%; max-width: 50%; }
+
+@media (min-width: 576px) {
+    .col-sm-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+    .col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+    .offset-sm-1 { margin-left: 8.333%; }
+    .offset-sm-2 { margin-left: 16.666%; }
+    .offset-sm-3 { margin-left: 25%; }
+    .offset-sm-4 { margin-left: 33.333%; }
+}
+
+@media (min-width: 768px) {
+    .col-md-2 { flex: 0 0 16.666%; max-width: 16.666%; }
+    .col-md-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+    .offset-md-3 { margin-left: 25%; }
+    .offset-md-5 { margin-left: 41.666%; }
+}
+
+@media (min-width: 992px) {
+    .col-lg-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+    .offset-lg-4 { margin-left: 33.333%; }
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+.p-4 {
+    padding: 1.5rem !important;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+small {
+    font-size: 0.875rem;
+    color: #718096;
+    display: block;
+    text-align: center;
+    font-style: italic;
+}
+
+strong {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #48bb78;
+}
+
+span {
+    color: #2d3748;
+    font-size: 1.1rem;
+}
+
+/* ===== DETALHES DO PAGAMENTO ===== */
+.payment-details {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #667eea;
+}
+
+.payment-amount {
+    background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #48bb78;
+    text-align: center;
+}
+
+.payment-submit {
+    margin-bottom: 2rem;
+}
+
+.payment-provider {
+    background: #f7fafc;
+    border-radius: 12px;
+    border-top: 3px solid #667eea;
+}
+
+/* ===== FORMULÁRIO ===== */
+form {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #ffffff;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-control-sm {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.number-input {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.form-row > [class*="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* ===== CARROSSEL ===== */
+.carousel-indicators {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.carousel-indicators li {
+    padding: 0.75rem 1.5rem;
+    background: #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #718096;
+}
+
+.carousel-indicators li:hover {
+    background: #cbd5e0;
+    transform: translateY(-2px);
+}
+
+.carousel-indicators li.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.carousel-div {
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+/* ===== MOBILE PAYMENT ===== */
+.mobile-payment {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-payment-header {
+    margin-bottom: 1rem;
+}
+
+.mobile-speaker {
+    width: 80px;
+    height: 8px;
+    background: #2d3748;
+    border-radius: 4px;
+    margin: 0 auto 1rem;
+    border: none;
+}
+
+.mobile-frame {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #2d3748, transparent);
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.mobile-body {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.mcExpressIcon {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* ===== QR PAYMENT ===== */
+.qr-payment {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.qr-payment-header {
+    margin-bottom: 1rem;
+}
+
+.qr-speaker {
+    width: 80px;
+    height: 8px;
+    background: #2d3748;
+    border-radius: 4px;
+    margin: 0 auto 1rem;
+    border: none;
+}
+
+.qr-frame {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #2d3748, transparent);
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.qr-body {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+#countdown {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.qr-image {
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.qr-image:hover {
+    transform: scale(1.05);
+}
+
+/* ===== CREDIT CARD ===== */
+.credit-card {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.credit-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.credit-card-brand {
+    font-size: 2rem;
+}
+
+.credit-card-data {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.credit-card-label {
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.credit-card-control {
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.credit-card-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.ccFormatMonitor {
+    letter-spacing: 3px;
+}
+
+.credit-card-feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #fed7d7;
+    color: #742a2a;
+    display: none;
+}
+
+.credit-card-feedback.show {
+    display: block;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.cardFeedback {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown-button {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    width: 100%;
+    text-align: right !important;
+    background: #ffffff !important;
+    border: 2px solid #e2e8f0 !important;
+    color: #2d3748 !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+.dropdown-toggle:hover {
+    background: #f7fafc !important;
+    border-color: #667eea !important;
+}
+
+.dropdown-toggle:focus {
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+.dropdown-menu {
+    min-width: 100%;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    padding: 0.5rem 0 !important;
+    margin-top: 0.25rem !important;
+}
+
+.dropdown-item {
+    padding: 0.75rem 1rem !important;
+    color: #2d3748 !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+}
+
+.dropdown-item:hover {
+    background: #f7fafc !important;
+    color: #667eea !important;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+}
+
+.btn-light {
+    background: #f7fafc;
+    color: #2d3748;
+}
+
+/* ===== LINKS E IMAGENS ===== */
+a {
+    color: #667eea;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== INFORMAÇÃO ===== */
+.info {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #cbd5e0;
+    color: #2d3748;
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 16px;
+    cursor: help;
+    margin-left: 5px;
+}
+
+/* ===== ANIMAÇÕES E TRANSIÇÕES ===== */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ===== RESPONSIVIDADE ADICIONAL ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+        margin: 1rem;
+        border-radius: 12px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .payment-details,
+    .payment-amount {
+        padding: 1.5rem 1rem;
+    }
+    
+    .carousel-indicators li {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* ===== MISCELÂNEA ===== */
+#root {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+noscript {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    background: #fed7d7;
+    color: #742a2a;
+    margin: 2rem;
+    border-radius: 8px;
+}
+
+/* ===== UTILITÁRIOS ESPECÍFICOS ===== */
+.offset-2 { margin-left: 16.666%; }
+.offset-3 { margin-left: 25%; }
+.offset-4 { margin-left: 33.333%; }
+
+@media (min-width: 576px) {
+    .offset-sm-2 { margin-left: 16.666%; }
+    .offset-sm-3 { margin-left: 25%; }
+    .offset-sm-4 { margin-left: 33.333%; }
+}
+
+@media (min-width: 768px) {
+    .offset-md-3 { margin-left: 25%; }
+    .offset-md-5 { margin-left: 41.666%; }
+}
+
+@media (min-width: 992px) {
+    .offset-lg-4 { margin-left: 33.333%; }
+}
+
+/* ===== ESTADOS ESPECIAIS ===== */
+.carousel-item.active {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== BARRA DE ROLAGEM PERSONALIZADA ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5568d3;
+}
+
